@@ -50,3 +50,10 @@ Step by step explanation to use Git and Github
 ![image](https://user-images.githubusercontent.com/61991616/232762143-ce92b47d-fb93-4e66-b00d-842a4fae7cf7.png)
 
 ![image](https://user-images.githubusercontent.com/61991616/232762233-d6cc6a04-aaa2-40ec-a5b3-4507c84b560d.png)
+
+
+If remote is added already - now you want to  change or remove it and add a new one? then use the below commands
+![image](https://github.com/MohammedJafferAli/LearnGitBasics/assets/61991616/87b2504b-2c1b-4de9-bc35-cc9c5dc7f4c1)
+
+git remote remove origin --> Just remove the existing remote origin
+git remote set-url origin git://new.url.here --> Overwrite the existing one
