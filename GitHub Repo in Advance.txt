@@ -1,0 +1,56 @@
+GitHub Repo in Advance
+
+Consider you gonna create a git repo for a website and add all the additional file
+.gitignore , README.md and LICENSE.txt
+
+#git config --global -e (show all the config and tools) 
+
+#LOcal copy with clone
+git clone "<url>" -> CLone the github repo and copy it in the local repo
+
+git clone <url> <foldername> create a folder by the name
+ rm -rf <file/foldername> -Forcefully remove any file.
+ 
+#Seeding repo with sample content
+Download an existing codes for creating a website using SDK/files then push them into the GitHub
+
+#Publish back to GitHub
+First time we need to use  > git push origin master
+next time > git push is enough
+
+Fetch vs pull
+
+Let's say someone else pushed their changes or changes were updated directly in the remote repo 
+then we should follow , bcz our local still say the tree is clean
+
+So always fetch 1st ->  fetch + merge = pull
+
+1. If you want to know what are the changes are done before  you merge the codes in local use fetch
+	git fetch
+	git status -> to see the difference
+now git pull -> accept the changes by saving the file.
+then git push -> after accepting the changes which was done by others now I need to add my changes.
+	
+	
+	Git Hub Commits
+Go to Github and select any repo and click on the commit header. That will show how many commits were done so far.
+1. Click on any commit to see what was changed at that point of time.
+2. Copy the commit ID in the local repo enter the following command to see the changes, 
+	git show <commitID>
+3. Repo Branches - 
+	1. Create a branch in Github (remember master is also a branch which can be a default branch)
+	Methods: 
+	A. Click on Branch -> enter a branch name -> create a new one
+4. Want to delete the branch after the purpose of the creation is completed?
+	git branch -d <branchName>
+5. git branch -a -> To show all the branches
+6. Is there any stale branch in your gitbranch /git then use following command !
+	git fetch -p ('p' represent pruning of stale branches)
+7. Alternative way to create a branch in local and merging with master is, create a branch in github and checkout the changes in local system
+	1. If the branch is creates directly in the Github then use git fetch to see the same branch in git bash
+	2. use git branch -a to see if this is added or not (remote/origin/branchCreatedInGitHub)
+	3. use git checkout branchCreatedInGitHub (switch when there are no local branch available on same name)
+	
+8. Cleaning Branches after the use.
+		A.  To delete the remote branch from the local use the command below,
+		git push origin :Update-README ( ':' represent delete remote branch)

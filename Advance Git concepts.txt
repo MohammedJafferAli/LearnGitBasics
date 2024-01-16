@@ -1,0 +1,159 @@
+Advance Git concepts
+
+Learn the linux bash shell commands
+for windows use help command in cmd prompt to learn more
+To use git in windows install git bash / if you have visual studio code then use the bash terminal over there.
+
+git init demo - INitialize a new git repo in the specified folder - should show as (master)
+git status - check the status of the files in the folder.
+git add <filename> - to add the file to the staging 
+git add . - Add all the files to staging
+git rm --cached <filename> - to unstage
+git commit -m "<message>" - To move the files from staging to repository (here Demo in D drive is the repo)
+.git/ is the actual git repo - And the name will change from master ot GIT_DIR!
+rm -rf <File> - remove anything forcefully from repo even the .git
+git init . - to add the git knowledge to the existing project
+
+#Consider I have committed everything to my local repo.. to check the logs of the commit
+git log - will commit ID, AUthor, Date and time along with the commit message.
+git show - similar to git log this will give all the details along with the changes /difference in the file.
+git commit -am "<message>" - Express commit combing add and commit commands
+##Backing out - Let's say you modify the file added to staging and you want to reset it then use below command
+git reset HEAD <filename>
+or git restore --staged <filename>
+
+#Consider you want to ignore the changes while commiting 
+git checkout -- <fiename>
+
+##Alias is giving short message to the longer commit message 
+Syntax
+git config --global alias.hist "log --oneline --graph --decorate --all"
+##how to check it added at global level - git config --global --list
+git hist (hist is my alias name)
+
+##Rename file in git repo
+git mv actualname expectedfilename
+This will stage the file but won't commit, so user has to manually commit it.
+
+#When removing a file from repo, this will be saved in staging so again commit is required to completely remove from staging too
+
+##Exclude unwanted files
+
+
+###########################################################################################################################################
+
+#Advanced concepts
+1. Compare the differences
+compare what are the differences between the files with the specific commit
+git diff <commit ID> HEAD (HEAD represent everything from the beging)
+
+With tool p4merge - git difftool <commitID> HEAD if P4Merge is not configured then it will open the default
+tool like vimdiff 
+
+2. Git Branch and Merge
+**Important concept**
+Branch = TImeline of commit Branch name = labels
+Deletion removes the label only
+
+Branching - Create a new branch from the main branch, later merge the branch with main after the modificaiton.
+
+Types 
+	1. Fast forward 
+	2. Automatic - Non conflict merge, preserve both timelines, commit on destination
+	3. Manual merge - Conflict, changes saved in merge commit
+	
+Special Markers
+HEAD - Represent the last commit of the current branch	
+
+#Current Branch - Git Branch will list all branches and branch name highlighted in GREEN with * is the current branch 
+git branch
+#To create and move to a new branch 
+git checkout -b <featurename>
+
+git diff <branchname> master -> this will show what are the difference between branch and master
+
+Switch to other branch user "checkout"
+git checkout master -> Jump to master
+Before merge we should on the master branch then specify the branch name you want to merge
+
+*master branch -> git merge updates (updates is my branch name)
+now the hist point to HEAD->master, updates
+
+once the changes are delete the branch label 
+git branch -d updates
+
+3. Conflict Resolution
+review and resolve the conflict in the files then commit the changes in the local repo
+
+# For example. create a new branch and update the same file and line of code then do the same in the master to create a conflict
+# Then try to merge to create conflict 
+# To resolve the conflict use mergetool command git mergetool
+
+######Day 2#####
+Tagging special events
+
+Add additional tag to the commits 
+how to add ? - git tag <tagname> (without annotation)
+how to check the tag is created? - git tag --list
+how to create tag with annotation - git tag -a <tagname> -m <message/annotation>
+how to use the tag? - use git show <tagname> to see any special commits
+
+
+4. Stashing - Save temporary changes
+example - Update the files in master branch. but you don't want to commit it now but need to save then use stash
+how to check it ? - git stash list
+how to get the stash back - git stash pop 
+
+5. Time travel - Reset and reflog
+
+reset a specific commit - lets say there are 10 commits in the git hist and if you want to go to a specific then use below command
+this will reset to the specific commit and preserve the commits that weredone after that.
+HEAD point move to that specific commit 
+there are 3 types of reset
+1. Soft - ex git reset commitID --soft (less destructive)
+2. mixed - git reset commitID --mixed
+3. Hard - git reset commitID --hard (most destructive)
+
+## git reflog will show all the actions that we did on this repository
+
+Just incase we used reset and went all the way to the bottom of the commit, now you can jump back to the recent commit byt the following command
+use reflog to get the commitID
+>>> git reset --hard <commitID>
+
+3 States in Git
+WorkingDirectory	Staging 	Repository(.git folder)	RemoteRepo
+
+
+GitHub commands
+1. below is used to add a new remote: > git remote add origin git@github.com:User/UserRepo.git
+2. below is used to change the url of an existing remote repository: > git remote set-url origin git@github.com:User/UserRepo.git
+3. git remote -v > to get the origin url
+4. git remote show origin > asking to show the origin url
+5. Under the Github branch name - if it is master then use the same word while pushing
+git push -u -f origin master 
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SSH - Secure shell protocal - AUthentication
+
+No need use username and personal access token to connect with github.
+
+To save time account will be linked to the SSH token and make changes rapidly.
+
+mkdir .ssh - to create ssh file
+move to the dir then write the following command 
+ > ssh-keygen -t rsa -C "<emailID>"
+ 
+ 
+ 
+ 
+
+
+Win		linux
+dir		ls -al
+cd		cd
+mkdir	same
+		mv - move file
+		cp - copy file from onr dir to another
+		
