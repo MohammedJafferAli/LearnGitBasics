@@ -145,15 +145,20 @@ mkdir .ssh - to create ssh file
 move to the dir then write the following command 
  > ssh-keygen -t rsa -C "<emailID>"
  
+ Graphs
+ git log --oneline --graph -> Display the commit history in graphhit 
+ git log --oneline -> Display all the commits without graph format
+ git log --oneline --decorate >>To decorate the logs 
  
  
+ --force > used to forcefully update the changes
  
+ Tags
+ 
+ What are GitHub tags and releases?
+Releases are deployable software iterations you can package and make available for a wider audience to download and use. 
+Releases are based on Git tags, which mark a specific point in your repository's history. A tag date may be different 
+than a release date since they can be created at different times.
+ 1. git tag -> display all the tags and if it doesn't return anything then no tags available
+ 2. Create a tag -> git tag <tagsName> <branch>
 
-
-Win		linux
-dir		ls -al
-cd		cd
-mkdir	same
-		mv - move file
-		cp - copy file from onr dir to another
-		

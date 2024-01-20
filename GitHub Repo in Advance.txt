@@ -18,7 +18,7 @@ Download an existing codes for creating a website using SDK/files then push them
 First time we need to use  > git push origin master
 next time > git push is enough
 
-Fetch vs pull
+##Fetch vs pull
 
 Let's say someone else pushed their changes or changes were updated directly in the remote repo 
 then we should follow , bcz our local still say the tree is clean
@@ -32,7 +32,7 @@ now git pull -> accept the changes by saving the file.
 then git push -> after accepting the changes which was done by others now I need to add my changes.
 	
 	
-	Git Hub Commits
+##Git Hub Commits
 Go to Github and select any repo and click on the commit header. That will show how many commits were done so far.
 1. Click on any commit to see what was changed at that point of time.
 2. Copy the commit ID in the local repo enter the following command to see the changes, 
@@ -54,3 +54,55 @@ Go to Github and select any repo and click on the commit header. That will show 
 8. Cleaning Branches after the use.
 		A.  To delete the remote branch from the local use the command below,
 		git push origin :Update-README ( ':' represent delete remote branch)
+9. Create or Mark an existing branch as default -> Settings and update as default.
+10. Deal conflict while pulling 
+
+##Comparison
+One can compare the difference in github in different ways
+1. Branches
+2. Commits
+	Go to commit under the current branch -> Select a specific commit by clicking on the cmommit ID
+	This will show the difference between the selected commit and HEAD
+	One can add comments in the codes or on the overall commit.
+	Can compare branch with commit,for this navigates to pull request select the branch and enter the commitID.
+3. Tags
+	To compare tags with branch -> remember the tag name -> go to pull request -> new-> select the branch and select a Tag. or compare two tags.
+4. Pull requests
+	Github -> Pull requests -> Create pull requests -> Under compare changes.. select the branches you want to compar.
+	 ex. master and update-README
+5. Advance 
+	master@{3days} - this will compare the current master branch codes with 3 days back codes.
+	develop@{2023-10-22} - Compare against a specific date
+	HEAD@{3}, HEAD@{-1} are other example.
+	
+##Social Coding
+1. Sharing the project with others
+2. Join projects with forking
+3. Contribute back using pull requests
+4. Review / Accept pull request
+5. Synchronize project copy
+
+Note: For the following section refer the github repo LearnGitBasics 
+ 
+##Forking
+A fork is a new repository that shares code and visibility settings with the original “upstream” repository.	
+To Fork a repo, Go to the particular repo and select fork from the top menu. this will automatically clone the repo into our remote repo 
+(precondition : you already signed-in with your GitHub account) this will also mention the parent repo.
+
+##Github Issues
+
+What are GitHub issues?
+GitHub Issues are items you can create in a repository to plan, discuss and track work.
+
+Go to repo -> from the menu find Issues (if this is not enabled then enable it from settings)
+
+
+##Milestones
+What are GitHub milestones used for?
+You can use milestones to track progress on groups of issues or pull requests in a repository. When you create a milestone, 
+you can associate it with issues and pull requests.
+To better manage your project, you can view details about your milestone.
+
+Go to Issues -> Select Milestones tab -> Create new milestone -> Provide the summary, date and desription then click create.
+You can edit/close/delete the milestone.
+
